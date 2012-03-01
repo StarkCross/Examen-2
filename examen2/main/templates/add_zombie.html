@@ -1,0 +1,13 @@
+<html>
+<head>
+	<title><h2><a style="color:#B40404">More Zombies!!!!!!</a></h2></title>
+</head>
+<body style="background:#CECEF6">
+	<form method="POST">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit"/>
+	</form>
+</body>
+
+</html>

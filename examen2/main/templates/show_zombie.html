@@ -1,0 +1,16 @@
+<html>
+<head>
+	<title><h2><a style="color:#B40404">{{ zombie.name }} </a></h2>- <a style="color:#610B0B">Waaaaaaaaa Zombies!!! </a></title>
+</head>
+<body style="background:#CECEF6">
+	<h3><a href="{% url home %}">+HOME+</a></h3>
+	<h1><a style="color:#B40404">{{ zombie.name }} {{ tweets.zombie.count }}</a></h1>
+	<h2><p>{{ zombie.graveyard }}</p></h2>
+	<p>{% for tweet in zombie.tweets.all %}
+		<h4><a style="color:#0431B4">Tweets:</a></h4>
+		<div><a style="color:#A61E00"> Status: </a>{{ tweet.status }}</div>
+		{% endfor %}
+	</p>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<html>
+<head>
+	<title>Exam II, The Zombies Test!</title>
+</head>
+<body style="background:#CECEF6">
+	<div><marquee BGCOLOR="#A4A4A4" width=700 direction=left><a style="color:#8A0808">
+		The Zombieeeeeeeeeeeeeeeeeees are coming!!!!</a></marquee>
+	</div>
+	<hr/>
+	{% for zombie in zombies %}
+	<div>
+		<h3><a style="color:#B40404">{{ zombie.name }} - ({{ zombie.tweets.count }}) </a><a style="color:#0B0B3B">Tweets</a></h3>
+		<a href="{% url show_zombie zombie.pk %}">See more</a>
+		<div><h4><a style="color:#B43104">The Graveyard is </a>- {{ zombie.graveyard }}</h4></div>
+		<div class='tweets'>
+			{% for tweet in zombie.tweets.all %}
+			<div><a style="color:#0431B4">Tweets:</a> {{ tweet.status }}</div>
+			{% endfor %}
+		</div>
+	</div>
+	{% endfor %}
+	
+	{% for tweet in Tweets %}
+		<div>
+			<h3><a style="color:#B43104">The status is - {{ tweet.status }}</a></h3>
+		</div>
+	{% endfor %}
+</body>
+
+</html>
